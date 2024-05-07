@@ -4,9 +4,20 @@ const todoButton = document.querySelector(".todo-button");
 const todoList = document.querySelector(".todo-list");
 
 //Event Listeners
-todoButton.addEventListener("click", addTodo());
+todoButton.addEventListener("click", addTodo);
 
 //Functions
 function addTodo(event) {
-    console.log("Hello todo")
+  //Preventing form submitting
+  event.preventDefault();
+  //Todo DIV
+  const todoDiv = document.createElement("div");
+  todoDiv.classList.add("todo");
+
+  //Create LI
+  const newTodo = document.createElement("li");
+  newTodo.innerText = "Coffe added";
+  newTodo.classList.add("todo-item");
+  todoDiv.appendChild(newTodo);
+  
 }
