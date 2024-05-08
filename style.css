@@ -83,10 +83,50 @@ form button:hover {
   background: green;
 }
 
-.todo-item{
+.todo-item {
   padding: 0rem 0.5rem;
 }
 
-.fa-check, fa-trash{
+.fa-check,
+fa-trash {
+  pointer-events: none;
+}
+
+.fall-item {
+  transform: translateY(8rem) rotateZ(20deg);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Add transition property */
+}
+
+.completed-todo {
+  text-decoration: line-through;
+  opacity: 1rem;
+}
+
+select {
+  outline: none;
+  border: none;
+}
+
+.filter-todo {
+  position: relative;
+  overflow: hidden;
+}
+
+select {
+  margin-left: 1rem;
+  color: #ff6f47;
+  width: 10rem;
+  cursor: pointer;
+  padding: 1rem;
+}
+
+select::after {
+  content: "/25BC";
+  position: absolute;
+  background: #ff6f47;
+  top: 0;
+  right: 0;
+  padding: 1rem;
   pointer-events: none;
 }
