@@ -100,7 +100,7 @@ fa-trash {
 
 .completed-todo {
   text-decoration: line-through;
-  opacity: 1rem;
+  opacity: 0.5;
 }
 
 select {
