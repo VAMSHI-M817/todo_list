@@ -24,6 +24,9 @@ function addTodo(event) {
   newTodo.classList.add("todo-item");
   todoDiv.appendChild(newTodo);
 
+  //ADDING NEWTODO TO LOCALSTORAGE
+  saveTodos(todoInput.value)
+
   //CHECK MARK-BUTTON
   const completedButton = document.createElement("button");
   completedButton.classList.add("complete-button");
@@ -90,3 +93,18 @@ function todoFiltering(e) {
     }
   });
 }
+
+function saveTodos(todo) {
+  let todos;
+  //CHECKING IF ALREADY ANY DATA IS THERE
+  if (localStorage.getItem("todos") === null) {
+    todos = [];
+  } else {
+    todos = JSON.parse(localStorage.getItem("todos"));
+  }
+  todos.push(todo);
+  localStorage.setItem("todos", JSON.stringify(todos));
+}
+
+
+
