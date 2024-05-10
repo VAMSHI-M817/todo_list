@@ -108,7 +108,7 @@ function saveTodos(todo) {
   localStorage.setItem("todos", JSON.stringify(todos));
 }
 
-function getTodos() {
+function getTodos() {s
   let todos;
   if (localStorage.getItem("todos") === null) {
     todos = [];
